@@ -1,0 +1,31 @@
+@model TechStore.Models.Product
+
+<h2>Agregar Producto</h2>
+
+<form asp-action="Add">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>IGV:</label>
+        <input type="text" class="form-control" value="@Model.IGV" readonly />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Agregar Producto</button>
+</form>
